@@ -4,15 +4,21 @@ import "fmt"
 
 var values = make(map[int]string)
 
+var start = 1
+var end = 100
+
 func main() {
-
-	var start = 1
-	var end = 100
-
 	values[3] = "Fizz"
 	values[5] = "Buzz"
-	values[7] = "Bizz"
 
+	random(values)
+}
+
+func random(values map[int]string) {
+	/*
+		Range over maps are returned random intentionally in go
+		Order of word concatenation is therefore random as well with this method
+	*/
 	for i := start; i <= end; i++ {
 		output := ""
 
