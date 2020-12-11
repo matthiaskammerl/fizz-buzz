@@ -5,14 +5,15 @@ import (
 	"sort"
 )
 
-var values = make(map[int]string)
+var values = map[int]string{
+	3: "Fizz",
+	5: "Buzz",
+}
 
 var start = 1
 var end = 100
 
 func main() {
-	values[3] = "Fizz"
-	values[5] = "Buzz"
 
 	sorted(values)
 }
@@ -49,6 +50,8 @@ func sorted(values map[int]string) {
 
 		fmt.Println(output)
 	}
+
+	fmt.Println(createString(3, values))
 }
 
 func checkAndAdd(count int, value int, word string) string {
